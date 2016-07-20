@@ -1,0 +1,18 @@
+.list-item-wrapper {
+    margin: 0px 0px 5px 0px;
+    display: inline-block;
+    padding: 10px 5px 5px 5px;
+}
+
+.list-item + .list-item .list-item-wrapper {
+    border-top: solid 1px #ddd;
+}
+
+    .list-item-wrapper input[type=checkbox] {
+        margin: 8px 4px 0px 10px;
+    }
+
+    .list-item-wrapper .btn {
+        padding-top: 4px;
+        padding-bottom: 4px;
+    }

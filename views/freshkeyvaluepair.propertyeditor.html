@@ -1,0 +1,25 @@
+﻿<div ng-controller="FreshKeyValuePair.EditorController">
+    <ng-form name="freshKeyValuePairEditorForm">
+        <div class="umb-editor">
+            <div class="control-group">
+                <button type="button" class="btn btn-small" ng-click="add($event)">Add Item</button>
+            </div>
+            <div class="list-items" ui-sortable="sortableOptions" ng-model="model.value.items">
+                <div class="list-item" ng-repeat="item in model.value.items">
+                    <div class="list-item-wrapper">
+                        <span ng-if="!model.config.autoGenerateKey">
+                            <i class="icon icon-navigation handle"></i>
+                            <input type="text" class="input-small" ng-model="item.key" value="{{item.key}}" required placeholder="Key" val-custom=" 'validateKey(item,$value)' " />
+                            :
+                        </span>
+                        <input type="text" class="input" ng-model="item.value" value="{{item.value}}" required placeholder="Value" />
+                        <a ng-href="" class="btn btn-danger btn-small" title="Delete Item"><i class="icon-delete" ng-click="delete(item, $event)"></i></a>
+                    </div>
+                </div>
+                <div class="list-value" ng-show="model.value.items.length == 0">
+                    <strong>No Items Entered</strong>
+                </div>
+            </div>
+        </div>
+        </ng-form>
+</div>
